@@ -1,13 +1,10 @@
 FROM ubuntu:latest
 
-# Install necessary dependencies
 RUN apt-get update && apt-get install -y wget && \
     rm -rf /var/lib/apt/lists/*
 
-# Download the .deb package
 RUN wget https://github.com/Chia-Network/drplotter/releases/download/1.0.3/drplotter_1.0.3_amd64.deb
 
-# Install the .deb package
 RUN apt-get update && \
     #apt-get install -y vim && \
     apt-get install -y ./drplotter_1.0.3_amd64.deb && \
