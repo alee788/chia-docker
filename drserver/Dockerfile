@@ -11,11 +11,6 @@ RUN apt-get update && \
     rm drplotter_1.0.3_amd64.deb && \
     rm -rf /var/lib/apt/lists/*
 
-#ENV DRSERVER_IP_ADDRESS="192.168.254.45:8080"
-#ENV FARMER_IP_ADDRESS="192.168.254.44"
-# mount your ssl cert directory to /ca
-# mount your root plot folder to /plots
-
 CMD ["/bin/bash", "-c", "\
     drserver && \
     tail -f /dev/null"]
