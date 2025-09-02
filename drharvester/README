@@ -1,0 +1,3 @@
+# sample - from directory with this Dockerfile
+docker build -t drharvester:latest . 
+sudo docker run --env=DRSERVER_IP_ADDRESS=192.168.254.45:8080 --env=FARMER_IP_ADDRESS=192.168.254.44 --volume=./ca:/ca --volume=/media/drplotter:/plots --restart=unless-stopped -d drharvester:latest
