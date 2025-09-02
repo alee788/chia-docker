@@ -21,5 +21,6 @@ CMD ["/bin/bash", "-c", "\
     drchia plots add -d /plots && \
     sed -i '/farmer_peers:/!b;n;s/  - host: .*/  - host: '$FARMER_IP_ADDRESS'/' ~/.chia/mainnet/config/config.yaml && \
     sed -i 's/recursive_plot_scan:.*$/recursive_plot_scan: true/' ~/.chia/mainnet/config/config.yaml && \
+    sed -i 's/log_level:.*$/log_level: INFO/' ~/.chia/mainnet/config/config.yaml && \
     drchia start harvester -r && \
     tail -f /dev/null"]
